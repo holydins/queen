@@ -15,9 +15,8 @@ public class Heuristica {
         List<Operator> applicableOperators = Operator.getAllApplicableOperators(state);
 
         for(Operator op: applicableOperators){
-            State newState = op.apply(state);
-            if(isFinishLine(newState)){
-                value -= 10;
+            if(op.apply(state).isGoal()){
+                value -= 1000;
             }else{
                 value += 10;
             }
@@ -54,22 +53,6 @@ public class Heuristica {
         }else{
             return false;
         }
-
-    }
-    public static boolean isFinishLine(State state){
-
-        for(Operator op: Operator.getAllApplicableOperators(state)){
-            State newState = op.apply(state);
-            int[] queenPosition = newState.getQueenPosition();
-
-            if(queenPosition[0] == newState.board.length - 1 ||
-                queenPosition[1] == 0 ||
-                    (Math.abs(queenPosition[0] - newState.board.length - 1) == Math.abs(queenPosition[1] - 0)) ){
-                return true;
-            }
-        }
-
-        return false;
     }
 
 }

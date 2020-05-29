@@ -116,14 +116,9 @@ public class Main {
     }
 
     public static int setSize(){
-
         return (int) (Math.random() * 10) + 1;
     }
 
-    /**
-     * It return the exact position of quuen as a pair.
-     * @return [x, y] pair.
-     */
     public static int[] getStartPositionOfQueen(int N){
         int x,y;
         boolean isFirstLine = Math.random() < 0.5;

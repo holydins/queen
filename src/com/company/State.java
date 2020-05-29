@@ -31,10 +31,8 @@ public class State {
     public void swapTurn() {
         if (this.turn == Turn.Computer) {
             this.turn = Turn.Player;
-        } else if(this.turn == Turn.Player) {
+        } else {
             this.turn = Turn.Computer;
-        }else{
-            System.out.println("mi a fasz ember");
         }
     }
 
@@ -65,7 +63,6 @@ public class State {
         for (int i = 0; i < N; i++) {
             for (int j = 0; j < N; j++) {
                 if (i == positionOfQueen[0] && j == positionOfQueen[1]) {
-                    //System.out.println("x: " + i + " y: " + j);
                     state[i][j] = 1;
                 } else {
                     state[i][j] = 0;

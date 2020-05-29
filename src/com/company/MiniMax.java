@@ -64,15 +64,4 @@ public class MiniMax {
         }
     }
 
-    public static boolean canPlayerWin(State state, Operator operator){
-        State newState = operator.apply(state);
-
-        List<Operator> ops = Operator.getAllApplicableOperators(newState);
-        for(Operator op: ops){
-            if(op.apply(newState).isGoal()){
-                return true;
-            }
-        }
-        return false;
-    }
 }
